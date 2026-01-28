@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://db:5432/minimundo
+    username: minimundo
+    password: minimundo
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
