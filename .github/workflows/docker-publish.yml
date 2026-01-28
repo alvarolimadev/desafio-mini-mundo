@@ -28,6 +28,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t jklvb/minimundo:${{ github.ref_name }} .
+
       - name: Push Docker image
         run: |
           docker push jklvb/minimundo:${{ github.ref_name }}
