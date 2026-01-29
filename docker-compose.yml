@@ -10,6 +10,15 @@ services:
     ports:
       - "5432:5432"
 
+  frontend:
+    build:
+      context: ./frontend
+    container_name: mini-mundo-frontend
+    ports:
+      - "5500:5500"
+    depends_on:
+      - app
+
   app:
     build: .
     depends_on:
