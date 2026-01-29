@@ -7,6 +7,7 @@ import br.com.minimundo.security.JwtUtil;
 import br.com.minimundo.service.AuthService;
 import br.com.minimundo.service.UserService;
 import jakarta.validation.Valid;
+import java.util.Map;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,6 +33,9 @@ public class AuthController {
     public ResponseEntity<?> login(@Valid @RequestBody LoginRequest request) {
         User user = authService.authenticate(request);
         String token = JwtUtil.generateToken(user.getEmail());
-        return ResponseEntity.ok(token);
+
+        return ResponseEntity.ok(
+            Map.of("token", token)
+        );
     }
 }
