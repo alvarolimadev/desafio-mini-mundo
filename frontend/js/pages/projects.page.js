@@ -2,6 +2,7 @@
 import * as service from "../services/project.service.js";
 import { renderProjects, openEditModal } from "../ui/project.ui.js";
 import { redirectToLogin } from "../core/auth.js";
+import { logout } from "../core/auth.js";
 
 let projects = [];
 
@@ -12,6 +13,8 @@ document
 document
   .getElementById("searchInput")
   .addEventListener("input", onSearch);
+
+document.getElementById("btnLogout").onclick = logout;
 
 export async function initProjectsPage() {
   try {
