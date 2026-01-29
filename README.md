@@ -21,6 +21,9 @@ Projeto de laboratório para avaliação técnica de desenvolvedores.
 docker compose up
 ```
 
+## Porta de acesso
+O frontend estará disponível em `http://localhost:5500`.
+
 ## Executar via Docker Hub
 
 É necessário um banco PostgreSQL em execução.
