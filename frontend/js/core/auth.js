@@ -27,3 +27,12 @@ export function redirectToLogin() {
   localStorage.removeItem("token");
   window.location.href = "index.html";
 }
+
+export function ensureAuthenticated() {
+  const token = getToken();
+  if (!token) {
+    window.location.href = "index.html";
+    return false;
+  }
+  return true;
+}
